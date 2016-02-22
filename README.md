@@ -14,4 +14,5 @@ Breakable squeaky toy, following http://nandovieira.com/setting-up-emberjs-with-
 ```sh
 script/setup   # setup app for first time
 script/cibuild # build run by ci
+script/server  # start the app and any other required processes
 ```
