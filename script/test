@@ -16,11 +16,11 @@ bundle exec rubocop
 echo "==> Running tests..."
 
 if [ -n "$1" ]; then
-  # TODO: figure out whether to pass to `rspec` or `ember test`
+  # TODO: figure out whether to pass to `rspec` or `npm test`
   echo "Don't know what to do" && exit 1
   # pass arguments to test call. This is useful for calling a single test.
   # bundle exec rspec "$1"
 else
   # bundle exec rspec
-  ( cd frontend && ember test )
+  ( cd frontend && npm test )
 fi

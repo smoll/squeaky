@@ -16,6 +16,8 @@ machine:
 
 ## Customize dependencies
 dependencies:
+  pre:
+    - npm install -g ember-cli # Install ember-cli
   override:
     - bundle install --without production debug # Can't install byebug on CircleCI
 
