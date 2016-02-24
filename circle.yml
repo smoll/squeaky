@@ -16,8 +16,13 @@ machine:
 
 ## Customize dependencies
 dependencies:
+  cache_directories:
+    - "vendor/bundle"
+    - "frontend/node_modules"
+    - "frontend/bower_components"
+
   override:
-    - bundle install --without production debug # Can't install byebug on CircleCI
+    - bundle install --path vendor/bundle --without production debug # Can't install byebug on CircleCI
     - npm install -g bower
     - bundle exec rake ember:install # Does both npm i && bower i
 

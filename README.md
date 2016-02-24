@@ -4,15 +4,13 @@ Breakable squeaky toy, following http://nandovieira.com/setting-up-emberjs-with-
 
 # prerequisites
 
-0. Node
-0. Ruby
-0. `npm install -g ember-cli`
-0. `brew install watchman`
+* Homebrew
 
 # scripts
 
 ```sh
-script/setup   # setup app for first time
-script/cibuild # build run by ci
-script/server  # start the app and any other required processes
+script/boostrap # setup app for first time
+
+script/test     # run tests
+script/server   # start server for local dev
 ```
