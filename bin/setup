@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
-require "pathname"
+require 'pathname'
 
 # path to your application root.
-APP_ROOT = Pathname.new File.expand_path("../../", __FILE__)
+APP_ROOT = Pathname.new File.expand_path('../../', __FILE__)
 
-fail "Use script/bootstrap instead!"
+raise 'Use script/bootstrap instead!'
