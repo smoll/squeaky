@@ -16,10 +16,9 @@ machine:
 
 ## Customize dependencies
 dependencies:
-  pre:
-    - cd frontend; npm install
   override:
     - bundle install --without production debug # Can't install byebug on CircleCI
+    - rake ember:install # Does both npm i && bower i
 
 ## Customize test commands
 test:

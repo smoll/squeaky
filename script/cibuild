@@ -7,4 +7,4 @@ set -e
 
 cd "$(dirname "$0")/.."
 
-bundle install --without production debug # Can't install byebug on CircleCI
+echo "Use circle.yml instead!" && exit 1

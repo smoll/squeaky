@@ -33,4 +33,4 @@ if [ -f "Gemfile" ]; then
 fi
 
 echo "==> Installing ember app dependencies..."
-( cd frontend && npm -q i )
+rake ember:install # Does both npm i && bower i
