@@ -1,0 +1,27 @@
+## Customize the test machine
+machine:
+
+  timezone:
+    America/New_York # Set the timezone
+
+  # Version of ruby to use
+  ruby:
+    version:
+      2.2.2
+
+  # Version of node to use
+  node:
+    version:
+      5.7.0
+
+## Customize dependencies
+dependencies:
+  override:
+    - bundle install --without production debug # Can't install byebug on CircleCI
+
+## Customize test commands
+test:
+  override:
+    - cd frontend; ember test
+
+# For customizations, see https://circleci.com/docs/config-sample
