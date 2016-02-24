@@ -24,6 +24,6 @@ dependencies:
 ## Customize test commands
 test:
   override:
-    - cd frontend; ember test
+    - cd frontend; npm test
 
 # For customizations, see https://circleci.com/docs/config-sample
