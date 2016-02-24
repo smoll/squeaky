@@ -4,39 +4,4 @@ require "pathname"
 # path to your application root.
 APP_ROOT = Pathname.new File.expand_path("../../", __FILE__)
 
-# Use this to find system-installed executables
-require APP_ROOT.join "lib", "setup_helper"
-
-Dir.chdir APP_ROOT do
-  puts "== Checking for system dependencies =="
-  abort "node not installed! Recommended: nvm install 5.6.0 --default" unless SetupHelper.which "node"
-  abort "bower not installed! Recommended: npm install -g bower" unless SetupHelper.which "bower"
-  puts "ember-cli not installed! Recommended: npm install -g ember-cli" unless SetupHelper.which "ember"
-  # TODO: do this instead: https://github.com/github/scripts-to-rule-them-all/blob/master/script/bootstrap#L10
-  puts "watchman not installed! Recommended: brew install watchman" unless SetupHelper.which "watchman"
-
-  Dir.chdir APP_ROOT.join "frontend" do
-    puts "== Installing npm dependencies =="
-    system "npm install"
-    system "bower install"
-  end
-
-  puts "== Installing bundler dependencies =="
-  system "gem install bundler --conservative"
-  system "bundle check || bundle install"
-
-  # puts "\n== Copying sample files =="
-  # unless File.exist?("config/database.yml")
-  #   system "cp config/database.yml.sample config/database.yml"
-  # end
-
-  puts "\n== Preparing database =="
-  system "bin/rake db:setup"
-
-  puts "\n== Removing old logs and tempfiles =="
-  system "rm -f log/*"
-  system "rm -rf tmp/cache"
-
-  puts "\n== Restarting application server =="
-  system "touch tmp/restart.txt"
-end
+fail "Use script/bootstrap instead!"

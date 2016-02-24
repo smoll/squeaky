@@ -1,9 +1,0 @@
-#!/bin/sh
-
-# Based on https://github.com/github/scripts-to-rule-them-all/blob/master/script/bootstrap
-
-set -e
-
-cd "$(dirname "$0")/.."
-
-bin/setup
