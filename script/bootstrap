@@ -21,11 +21,11 @@ echo "==> Checking rbenv installation..."
 if [[ ":$PATH:" == *":$HOME/.rbenv/shims:"* ]]; then
   echo "rbenv looks correctly installed."
 else
-  echo "rbenv isn't correctly installed! Run:"
-  echo ""
-  echo "  rbenv init"
-  echo ""
-  echo "then follow the directions. See https://github.com/rbenv/rbenv for more info."
+  >&2 echo "rbenv isn't correctly installed! Run:"
+  >&2 echo ""
+  >&2 echo "  rbenv init"
+  >&2 echo ""
+  >&2 echo "then follow the directions. See https://github.com/rbenv/rbenv for more info."
   exit 1
 fi
 
